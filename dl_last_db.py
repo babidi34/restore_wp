@@ -15,9 +15,7 @@ load_dotenv()
 
 date = datetime.datetime.now().strftime("%Y-%m-%d")
 web_service_name = os.environ.get('web_service_name')
-print(web_service_name)
 web_db = os.environ.get('web_db')
-print(web_db)
 # Instanciate an OVH Client.
 # You can generate new credentials with full access to your account on
 # the token creation page
@@ -35,7 +33,6 @@ last_db = sorted(db_list, reverse=True)[0]
 
 result_url_dl_db = client.get(f"/hosting/web/{web_service_name}/database/{web_db}/dump/{last_db}")
 url_dl_db = result_url_dl_db['url']
-print(url_dl_db)
 dl_db = requests.get(url_dl_db)
 if dl_db.status_code == 200:
     with open("wp_{}.gz".format(date), 'wb') as f:
