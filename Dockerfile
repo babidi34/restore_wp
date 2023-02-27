@@ -2,6 +2,7 @@ FROM debian:10
 
 ARG archive_wp
 ARG db_wp
+ARG domain_name
 
 RUN apt-get update && apt-get install -y default-mysql-server apache2 libapache2-mod-php openssl php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip php7.3-mysql vim
 COPY $db_wp /opt/$db_wp
