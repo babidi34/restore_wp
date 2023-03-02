@@ -1,4 +1,4 @@
-docker rm -f debian-wp wp
+docker rm -f wp
 docker image rm debian-wp
 
 source .env
