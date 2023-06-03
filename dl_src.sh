@@ -4,7 +4,7 @@ source .env
 
 remote_path="/home/${username}/www/"
 local_path="./www/"
-DATE=$(date +%Y-%m-%d-%H-%M-%S)
+DATE=$(date +%Y-%m-%d-%H)
 archive_name="wp_${DATE}.tar"
 
 sshpass -p $sftp_pass sftp -o StrictHostKeyChecking=no -P $port $username@$host << EOF
