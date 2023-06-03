@@ -13,7 +13,7 @@ archive_name="wp_${DATE}.tar"
 mkdir -p /var/backups
 
 # Exporter la base de données
-mysqldump -u $db_user -p$db_password -h $db_host $db_name > /var/backups/$dump_name
+mysqldump -u $db_user -p$db_password -h $db_host $db_name > $folder_dest/$dump_name
 
 # Exporter les sources
 tar -czvf $folder_dest/$archive_name $src_path

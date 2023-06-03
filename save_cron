@@ -1,2 +1,2 @@
 0 2 * * * /bin/bash /opt/restore_wp/save.wp
-0 1 * * * find /var/backups -type f -name "wp_*" -mtime +7 -delete
+0 3 * * * find /var/backups -type f -name "wp_*" -mtime +7 -delete

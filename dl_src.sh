@@ -8,7 +8,7 @@ DATE=$(date +%Y-%m-%d-%H-%M-%S)
 archive_name="wp_${DATE}.tar"
 
 # Connexion SFTP et téléchargement du contenu du dossier www/
-sftp -P $port $username@$host << EOF
+sshpass -p $sftp_pass sftp -P $port $username@$host << EOF
   get -r $remote_path $local_path
   quit
 EOF
